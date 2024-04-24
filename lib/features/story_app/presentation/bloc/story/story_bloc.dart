@@ -16,6 +16,8 @@ class StoryBloc extends Bloc<StoryEvent, StoryState> {
     GetAllStoriesEvent event,
     Emitter<StoryState> emit,
   ) async {
+    emit(const StoryLoadingState());
+
     final state = await getStoriesUseCase();
 
     if (state is DataSuccess) {

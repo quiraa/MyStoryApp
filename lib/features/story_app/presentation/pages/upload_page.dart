@@ -1,6 +1,8 @@
 import 'dart:io';
 
 import 'package:dicoding_story_app/app/routes/app_router.dart';
+import 'package:dicoding_story_app/features/story_app/presentation/bloc/story/story_bloc.dart';
+import 'package:dicoding_story_app/features/story_app/presentation/bloc/story/story_event.dart';
 import 'package:dicoding_story_app/features/story_app/presentation/bloc/upload/upload_bloc.dart';
 import 'package:dicoding_story_app/features/story_app/presentation/bloc/upload/upload_event.dart';
 import 'package:dicoding_story_app/features/story_app/presentation/bloc/upload/upload_state.dart';
@@ -65,7 +67,6 @@ class UploadPage extends HookWidget {
               listener: (context, state) {
                 if (state is UploadSuccessState) {
                   AppRouter.router.pop();
-                  Fluttertoast.showToast(msg: "Story Uploaded");
                 }
               },
             ),
@@ -258,6 +259,7 @@ class UploadPage extends HookWidget {
     }
 
     context.read<UploadBloc>().add(UploadStoryEvent(description, imageFile, null, null));
+    context.read<StoryBloc>().add(const GetAllStoriesEvent());
   }
 
   Future<void> _getImageFromSource(
