@@ -6,6 +6,14 @@
     <string>Buka privasi ini untuk akses kamera.</string>
     <key>NSPhotoLibraryUsageDescription </key>
     <string>Buka privasi ini untuk akses galeri foto.</string>
+
+	<key>CFBundleLocalizations</key>
+  	<array>
+    	<string>en</string>
+    	<string>fr</string>
+    	<string>id</string>
+  	</array>
+
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
