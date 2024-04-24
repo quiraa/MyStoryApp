@@ -1,0 +1,155 @@
+{
+  "@@locale": "en",
+  "register": "Register",
+  "@register": {
+    "description": "Register Text in Register Page"
+  },
+  "alreadyHaveAnAccount": "Already have an account?",
+  "@alreadyHaveAnAccount": {
+    "description": "Alternative Text on Register Page"
+  },
+  "labelEmail": "Email",
+  "@labelEmail": {
+    "description": "Email Label in TextFormField"
+  },
+  "labelName": "Name",
+  "@labelName": {
+    "description": "Name Label in TextFormField"
+  },
+  "labelPassword": "Password",
+  "@labelPassworod": {
+    "description": "Password Label in TextFormField"
+  },
+  "hintEmail": "Enter email",
+  "@hintEmail": {
+    "description": "Email hint in TextFormField"
+  },
+  "hintName": "Enter name",
+  "@hintName": {
+    "description": "Name hint in TextFormField"
+  },
+  "hintPassword": "Enter password",
+  "@hintPassword": {
+    "description": "Password hint in TextFormField"
+  },
+  "errorValidEmail": "Please enter a valid email",
+  "@errorValidEmail": {
+    "description": "Error Text on Email TextField"
+  },
+  "errorFillEmail": "Please enter an email",
+  "@errorFillEmail": {
+    "description": "Fill Email on Email TextField"
+  },
+  "errorPasswordLength": "Password must be at least 8 characters long",
+  "@errorPasswordLength": {
+    "description": "Error Password Length on Password TextField"
+  },
+  "errorFillPassword": "Please enter a password",
+  "@errorFillPassword": {
+    "description": "Fill Password on Password TextField"
+  },
+  "errorNameLength": "Username must be at least 4 characters long",
+  "@errorNameLength": {
+    "description": "Error Password Length on Password TextField"
+  },
+  "errorFillName": "Please enter a username",
+  "@errorFillName": {
+    "description": "Fill Password on Password TextField"
+  },
+  "login": "Login",
+  "@login": {
+    "description": "Login Text in Login Page"
+  },
+  "didntHaveAnAccount": "Didn't have an account?",
+  "@didntHaveAnAccount": {
+    "description": "Alternative Text on Login Page"
+  },
+  "story": "Story",
+  "@story": {
+    "description": "Story Page AppBar Title"
+  },
+  "settings": "Settings",
+  "@settings": {
+    "description": "Settings Page AppBar Title"
+  },
+  "changeTheme": "Change Theme",
+  "@changeTheme": {
+    "description": "Change Theme Text in Settings Page"
+  },
+  "changeLanguage": "Change Language",
+  "@changeLanguage": {
+    "description": "Change Language Text in Settings Page"
+  },
+  "logout": "Logout",
+  "@logout": {
+    "description": "Logout Text in Settings Page"
+  },
+  "uploadStory": "Upload Story",
+  "@uploadStory": {
+    "description": "Upload Story Page Title and Button Text"
+  },
+  "pickImage": "Pick Image",
+  "@pickImage": {
+    "description": "Pick Image Text Button"
+  },
+  "enableLocation": "Enable Location",
+  "@enableLocation": {
+    "description": "Enable Location Text in Upload Story Page"
+  },
+  "pickFromGallery": "Pick From Gallery",
+  "@pickFromGallery": {
+    "description": "Pick From Gallery Text in Upload Story Page Bottom Sheet"
+  },
+  "pickFromCamera": "Pick From Camera",
+  "@pickFromCamera": {
+    "description": "Pick From Camera Text in Upload Story Page Bottom Sheet"
+  },
+  "detailStory": "Detail Story",
+  "@detailStory": {
+    "description": "Detail Page AppBar Title"
+  },
+  "logoutConfirmation": "Are you sure to Logout? You need to login back next time",
+  "@logoutConfirmation": {
+    "description": "Logout Alert Dialog Content"
+  },
+  "cancel": "Cancel",
+  "@cancel": {
+    "description": "Cancel Text in Logout Alert Dialog"
+  },
+  "english": "English",
+  "@english": {
+    "description": "English Language Options"
+  },
+  "french": "French",
+  "@french": {
+    "description": "French Language Options"
+  },
+  "indonesia": "Indonesia",
+  "@indonesia": {
+    "description": "Indonesian Language Options"
+  },
+  "description": "Description",
+  "@description": {
+    "description": "Description Label TextField"
+  },
+  "descriptionHint": "Enter Description",
+  "@descriptionHint": {
+    "description": "Enter Description Label TextField"
+  },
+  "enableLocationSharing": "Enable Location Sharing",
+  "@enableLocationSharing": {
+    "description": "Enable Location Label Switch"
+  },
+  "chooseImageSource": "Choose Image Source",
+  "@chooseImageSource": {
+    "description": "Image Source Title Dialog"
+  },
+  "camera": "Camera",
+  "@camera": {
+    "description": "Camera Source Dialog"
+  },
+  "gallery": "Gallery",
+  "@gallery": {
+    "description": "Gallery Source Dialog"
+  }
+}
