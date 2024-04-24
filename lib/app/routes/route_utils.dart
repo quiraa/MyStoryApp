@@ -11,7 +11,7 @@ extension AppPageExtension on PAGES {
   String get screenPath {
     switch (this) {
       case PAGES.story:
-        return "/story";
+        return "/";
 
       case PAGES.detail:
         return "/detail";
@@ -29,7 +29,7 @@ extension AppPageExtension on PAGES {
         return "/upload";
 
       default:
-        return "/story";
+        return "/";
     }
   }
 
