@@ -18,28 +18,29 @@ class AppRouter {
     navigatorKey: _rootNavigatorKey,
     routes: [
       GoRoute(
-        name: PAGES.story.screenName,
-        path: PAGES.story.screenPath,
-        builder: (context, state) => const StoryPage(),
-      ),
-      GoRoute(
-        name: PAGES.upload.screenName,
-        path: PAGES.upload.screenPath,
-        builder: (context, state) => UploadPage(),
-      ),
-      GoRoute(
-        name: PAGES.detail.screenName,
-        path: PAGES.detail.screenPath,
-        builder: (context, state) {
-          final String storyId = state.extra as String;
-          return DetailPage(id: storyId);
-        },
-      ),
-      GoRoute(
-        name: PAGES.setting.screenName,
-        path: PAGES.setting.screenPath,
-        builder: (context, state) => const SettingsPage(),
-      ),
+          name: PAGES.story.screenName,
+          path: PAGES.story.screenPath,
+          builder: (context, state) => const StoryPage(),
+          routes: [
+            GoRoute(
+              name: PAGES.upload.screenName,
+              path: PAGES.upload.screenPath,
+              builder: (context, state) => UploadPage(),
+            ),
+            GoRoute(
+              name: PAGES.detail.screenName,
+              path: PAGES.detail.screenPath,
+              builder: (context, state) {
+                final String storyId = state.extra as String;
+                return DetailPage(id: storyId);
+              },
+            ),
+            GoRoute(
+              name: PAGES.setting.screenName,
+              path: PAGES.setting.screenPath,
+              builder: (context, state) => const SettingsPage(),
+            ),
+          ]),
       GoRoute(
         name: PAGES.login.screenName,
         path: PAGES.login.screenPath,
