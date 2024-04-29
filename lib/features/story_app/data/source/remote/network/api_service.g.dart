@@ -94,9 +94,17 @@ class _ApiService implements ApiService {
 
   @override
   Future<HttpResponse<ListStoryResponse>> getAllStories(
-      String authorization) async {
+    String authorization,
+    int page,
+    int size,
+    int location,
+  ) async {
     final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{
+      r'page': page,
+      r'size': size,
+      r'location': location,
+    };
     final _headers = <String, dynamic>{r'Authorization': authorization};
     _headers.removeWhere((k, v) => v == null);
     const Map<String, dynamic>? _data = null;
@@ -159,8 +167,8 @@ class _ApiService implements ApiService {
     String authorization,
     String description,
     File photo,
-    Float? lat,
-    Float? lon,
+    double? lat,
+    double? lon,
   ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};

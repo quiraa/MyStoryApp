@@ -37,5 +37,7 @@
   "enableLocationSharing": "Aktifkan Berbagi Lokasi",
   "chooseImageSource": "Pilih Sumber Gambar",
   "camera": "Kamera",
-  "gallery": "Galeri"
+  "gallery": "Galeri",
+  "maps": "Peta",
+  "home": "Beranda"
 }

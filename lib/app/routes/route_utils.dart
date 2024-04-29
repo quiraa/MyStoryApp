@@ -1,4 +1,8 @@
 enum PAGES {
+  maps,
+  location,
+  splash,
+  main,
   story,
   detail,
   login,
@@ -10,11 +14,23 @@ enum PAGES {
 extension AppPageExtension on PAGES {
   String get screenPath {
     switch (this) {
-      case PAGES.story:
+      case PAGES.location:
+        return "location";
+
+      case PAGES.maps:
+        return "maps";
+
+      case PAGES.splash:
+        return "/splash";
+
+      case PAGES.main:
         return "/";
 
+      case PAGES.story:
+        return "story";
+
       case PAGES.detail:
-        return "/detail";
+        return "detail";
 
       case PAGES.login:
         return "/login";
@@ -23,10 +39,10 @@ extension AppPageExtension on PAGES {
         return "/register";
 
       case PAGES.setting:
-        return "/settings";
+        return "settings";
 
       case PAGES.upload:
-        return "/upload";
+        return "upload";
 
       default:
         return "/";
@@ -35,6 +51,18 @@ extension AppPageExtension on PAGES {
 
   String get screenName {
     switch (this) {
+      case PAGES.location:
+        return "Location";
+
+      case PAGES.maps:
+        return "Maps";
+
+      case PAGES.main:
+        return "Main";
+
+      case PAGES.splash:
+        return "Splash";
+
       case PAGES.detail:
         return "Detail";
 
@@ -54,12 +82,24 @@ extension AppPageExtension on PAGES {
         return "Setting";
 
       default:
-        return "Story";
+        return "Main";
     }
   }
 
   String get screenTitle {
     switch (this) {
+      case PAGES.location:
+        return "Location";
+
+      case PAGES.maps:
+        return "Maps";
+
+      case PAGES.main:
+        return "Main";
+
+      case PAGES.splash:
+        return "Splash";
+
       case PAGES.detail:
         return "Detail";
 
@@ -79,7 +119,7 @@ extension AppPageExtension on PAGES {
         return "Setting";
 
       default:
-        return "story";
+        return "Main";
     }
   }
 }

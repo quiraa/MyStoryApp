@@ -2,7 +2,6 @@ import 'dart:async';
 import 'dart:io';
 import 'dart:typed_data';
 
-import 'package:flutter/material.dart';
 import 'package:image/image.dart' as img;
 import 'package:intl/intl.dart';
 
@@ -49,33 +48,6 @@ class Utils {
     return imageFile;
   }
 
-  // File compressImage(File file) {
-  //   img.Image? image = img.decodeImage(file.readAsBytesSync());
-
-  //   int width;
-  //   int height;
-
-  //   if(image!.width > image.height) {
-  //     width = 800;
-  //     height = (image.height / image.width * 800).round();
-  //   } else {
-  //     height = 800;
-  //     width = (image.width / image.height * 800).round();
-  //   }
-
-  //   img.Image resizedImage = img.copyResize(image, width: width, height: height);
-
-  //   // Compress the image with JPEG format
-  //   List<int> compressedBytes =
-  //       img.encodeJpg(resizedImage, quality: 85); // Adjust quality as needed
-
-  //   // Save the compressed image to a file
-  //   File compressedFile = File(file.path.replaceFirst('.jpg', '_compressed.jpg'));
-  //   compressedFile.writeAsBytesSync(compressedBytes);
-
-  //   return compressedFile;
-  // }
-
   String? validateUsername(String? value) {
     if (value == null || value.isEmpty) {
       return 'Please enter a username';
@@ -109,7 +81,7 @@ class Utils {
     return null;
   }
 
-  void togglePasswordVisibility(ValueNotifier<bool> passwordVisible) {
-    passwordVisible.value = !passwordVisible.value;
+  void togglePasswordVisibility(bool passwordVisible) {
+    passwordVisible = !passwordVisible;
   }
 }

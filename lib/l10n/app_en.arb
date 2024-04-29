@@ -151,5 +151,13 @@
   "gallery": "Gallery",
   "@gallery": {
     "description": "Gallery Source Dialog"
+  },
+  "home": "Home",
+  "@home": {
+    "description": "Home Navbar"
+  },
+  "maps": "Maps",
+  "@maps": {
+    "description": "Maps Navbar"
   }
 }

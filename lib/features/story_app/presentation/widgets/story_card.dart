@@ -1,5 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:dicoding_story_app/features/story_app/data/source/remote/response/story_response_item.dart';
+import 'package:dicoding_story_app/features/story_app/data/source/remote/response/story/story_response_item.dart';
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 

@@ -4,48 +4,59 @@ import 'package:dicoding_story_app/features/story_app/domain/repository/story_re
 import 'package:dicoding_story_app/features/story_app/domain/usecase/check_login_status_usecase.dart';
 import 'package:dicoding_story_app/features/story_app/domain/usecase/get_detail_story_usecase.dart';
 import 'package:dicoding_story_app/features/story_app/domain/usecase/get_stories_usecase.dart';
+import 'package:dicoding_story_app/features/story_app/domain/usecase/get_stories_with_location_usecase.dart';
 import 'package:dicoding_story_app/features/story_app/domain/usecase/login_user_usecase.dart';
 import 'package:dicoding_story_app/features/story_app/domain/usecase/logout_user_usecase.dart';
 import 'package:dicoding_story_app/features/story_app/domain/usecase/register_user_usecase.dart';
 import 'package:dicoding_story_app/features/story_app/domain/usecase/upload_story_usecase.dart';
-import 'package:dicoding_story_app/features/story_app/presentation/bloc/login/login_bloc.dart';
-import 'package:dicoding_story_app/features/story_app/presentation/bloc/detail/detail_bloc.dart';
-import 'package:dicoding_story_app/features/story_app/presentation/bloc/register/register_bloc.dart';
-import 'package:dicoding_story_app/features/story_app/presentation/bloc/story/story_bloc.dart';
-import 'package:dicoding_story_app/features/story_app/presentation/bloc/upload/upload_bloc.dart';
+
+import 'package:dicoding_story_app/features/story_app/presentation/cubit/detail/detail_cubit.dart';
+import 'package:dicoding_story_app/features/story_app/presentation/cubit/login/login_cubit.dart';
+import 'package:dicoding_story_app/features/story_app/presentation/cubit/register/register_cubit.dart';
+import 'package:dicoding_story_app/features/story_app/presentation/cubit/story/story_cubit.dart';
+import 'package:dicoding_story_app/features/story_app/presentation/cubit/upload/upload_story_cubit.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 
 final sl = GetIt.instance;
 
-Future<void> initializeDependencies() async {
-  sl.registerSingleton<Dio>(Dio());
+class AppServiceLocator {
+  static Future<void> initializeServiceLocator() async {
+    //  * Services
+    sl.registerSingleton<Dio>(Dio());
 
-  sl.registerSingleton<ApiService>(ApiService(sl()));
+    sl.registerSingleton<ApiService>(ApiService(sl()));
 
-  sl.registerSingleton<StoryRepository>(StoryRepositoryImpl(sl()));
+    sl.registerSingleton<StoryRepository>(StoryRepositoryImpl(sl()));
 
-  sl.registerSingleton<GetStoriesUseCase>(GetStoriesUseCase(sl()));
+    //  * UseCases
 
-  sl.registerSingleton<CheckLoginStatusUseCase>(CheckLoginStatusUseCase(sl()));
+    sl.registerSingleton<GetStoriesUseCase>(GetStoriesUseCase(sl()));
 
-  sl.registerSingleton<LoginUserUseCase>(LoginUserUseCase(sl()));
+    sl.registerSingleton<CheckLoginStatusUseCase>(CheckLoginStatusUseCase(sl()));
 
-  sl.registerSingleton<LogoutUserUseCase>(LogoutUserUseCase(sl()));
+    sl.registerSingleton<LoginUserUseCase>(LoginUserUseCase(sl()));
 
-  sl.registerSingleton<RegisterUserUseCase>(RegisterUserUseCase(sl()));
+    sl.registerSingleton<LogoutUserUseCase>(LogoutUserUseCase(sl()));
 
-  sl.registerSingleton<UploadStoryUseCase>(UploadStoryUseCase(sl()));
+    sl.registerSingleton<RegisterUserUseCase>(RegisterUserUseCase(sl()));
 
-  sl.registerSingleton<GetDetailStoryUseCase>(GetDetailStoryUseCase(sl()));
+    sl.registerSingleton<UploadStoryUseCase>(UploadStoryUseCase(sl()));
 
-  sl.registerFactory<LoginBloc>(() => LoginBloc(sl(), sl(), sl()));
+    sl.registerSingleton<GetStoriesWithLocatonUseCase>(GetStoriesWithLocatonUseCase(sl()));
 
-  sl.registerFactory<RegisterBloc>(() => RegisterBloc(sl()));
+    sl.registerSingleton<GetDetailStoryUseCase>(GetDetailStoryUseCase(sl()));
 
-  sl.registerFactory<StoryBloc>(() => StoryBloc(sl()));
+    //  * BLOC
 
-  sl.registerFactory<DetailStoryBloc>(() => DetailStoryBloc(sl()));
+    sl.registerFactory<LoginCubit>(() => LoginCubit(sl(), sl(), sl()));
 
-  sl.registerFactory<UploadBloc>(() => UploadBloc(sl()));
+    sl.registerFactory<RegisterCubit>(() => RegisterCubit(sl()));
+
+    sl.registerFactory<StoryCubit>(() => StoryCubit(sl(), sl()));
+
+    sl.registerFactory<DetailStoryCubit>(() => DetailStoryCubit(sl()));
+
+    sl.registerFactory<UploadStoryCubit>(() => UploadStoryCubit(sl()));
+  }
 }
